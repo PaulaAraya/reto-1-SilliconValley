@@ -16,7 +16,14 @@ const printComment = (posts) => {
   postPrint.innerHTML = '';
   posts.forEach((post, index) => {
     postPrint.innerHTML += `
-    <p>${post}</p> <button onclick="deleteComment(${index})"> eliminar </button>
+    <ul class="list-group list-group-flush" style="width: 100%;">
+    <li class="list-group-item">
+    <p class="card-text text-justify">${post}</p>
+    <span>
+    <i class="fas fa-trash-alt text-right" onclick="deleteComment(${index})"></i>
+    </span> 
+    </li>
+    </ul>
     `;
   })
 };
@@ -31,3 +38,4 @@ btn.addEventListener('click', () => {
     printComment(arrayPost);
   }
 });
+
